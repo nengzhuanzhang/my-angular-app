@@ -5,7 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.less']
 })
 export class LayoutComponent implements OnInit {
 

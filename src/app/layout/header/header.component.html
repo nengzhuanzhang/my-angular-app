@@ -19,3 +19,24 @@
     </a>
   </ng-template>
 </ng-container>
+
+<!-- avatar -->
+ <ng-container>
+  <nz-avatar
+  nz-dropdown
+  [nzDropdownMenu]="theme"
+  [nzSize]="35"
+  nzIcon="user"
+  nzSrc="https://www.sikiedu.com/files/default/2019/08-06/222854637f91628894.jpg"
+  class="header-avatar"
+  ></nz-avatar>
+
+  <nz-dropdown-menu #theme="nzDropdownMenu" nzTrigger="click">
+    <ul nz-menu nzSelectable>
+      <li nz-menu-item (click)="changeTheme('default')">default theme</li>
+      <li nz-menu-item (click)="changeTheme('dark')">dark theme</li>
+      <li nz-menu-item (click)="logout()">退出登录</li>
+    </ul>
+  </nz-dropdown-menu>
+ </ng-container>
+

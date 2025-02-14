@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../../service/theme.service';
+
 
 interface MenuInfo {
   name: string;
@@ -9,7 +11,7 @@ interface MenuInfo {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
   menuList:MenuInfo[] = [
@@ -84,13 +86,20 @@ export class HeaderComponent implements OnInit {
   ];
   showTemplate:boolean = false;
 
-  constructor() { }
+  constructor(private themeService:ThemeService) { }
 
   ngOnInit() {
   }
 
   goToPage(path:string) {
     // this.router.navigate([path])
+  }
+
+  logout() { }
+
+  changeTheme(theme:string) {
+    localStorage.setItem('theme',theme)
+    this.themeService.change()
   }
 
 }

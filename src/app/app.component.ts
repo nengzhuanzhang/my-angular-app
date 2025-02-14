@@ -7,7 +7,7 @@ import { LayoutModule } from './layout/layout.module';
   standalone: true,
   imports: [LayoutModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.less'
 })
 export class AppComponent {
   title = 'my-angular-app';
