@@ -3,7 +3,7 @@
 </a>
 
 <ng-container *ngFor="let item of menuList">
-  <a nz-dropdown [nzDropdownMenu]="menu" *ngIf="item.list else showTemplate" class="menu-title">
+  <a nz-dropdown [nzDropdownMenu]="menu" *ngIf="item.list else showTemplate" [routerLink]="item.path" class="menu-title">
     {{ item.name }}
     <span nz-icon nzType="caret-down" nzTheme="outline"></span>
     <!-- <nz-icon nzType="caret-down" nzTheme="outline" />  自 v19 版本起受支持-->
@@ -11,10 +11,12 @@
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu nzSelectable>
       <li nz-menu-item *ngFor="let child of item.list" (click)="goToPage(child.path)">{{child.name}}</li>
+      <!-- routerLink方式跳转及传递参数 -->
+      <!-- <li nz-menu-item *ngFor="let child of item.list" [routerLink]="[child.path]" [queryParams]="{id: 1}">{{child.name}}</li> -->
     </ul>
   </nz-dropdown-menu>
   <ng-template #showTemplate>
-    <a class="menu-title">
+    <a [routerLink]="item.path" class="menu-title">
       {{item.name}}
     </a>
   </ng-template>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
+import { Router } from '@angular/router';
 
 
 interface MenuInfo {
@@ -86,13 +87,13 @@ export class HeaderComponent implements OnInit {
   ];
   showTemplate:boolean = false;
 
-  constructor(private themeService:ThemeService) { }
+  constructor(private themeService:ThemeService, public router:Router) { }
 
   ngOnInit() {
   }
 
   goToPage(path:string) {
-    // this.router.navigate([path])
+    this.router.navigate([path],{queryParams:{id:1}})
   }
 
   logout() { }
