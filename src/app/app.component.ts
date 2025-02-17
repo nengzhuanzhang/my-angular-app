@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LayoutModule],
+  imports: [RouterOutlet,LayoutModule,NzButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
