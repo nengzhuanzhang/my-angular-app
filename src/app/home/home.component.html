@@ -1,3 +1,7 @@
-<p>
-  home works!
-</p>
+<nz-carousel nzAutoPlay style="height: 450px;">
+  @for (item of list; track item) {
+    <div nz-carousel-content>
+      <img [src]="[item.src]">
+    </div>
+  }
+</nz-carousel>
