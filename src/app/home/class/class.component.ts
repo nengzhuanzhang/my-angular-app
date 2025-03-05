@@ -9,7 +9,7 @@ interface classInfo {
 @Component({
   selector: 'app-class',
   templateUrl: './class.component.html',
-  styleUrls: ['./class.component.css']
+  styleUrls: ['./class.component.less']
 })
 export class ClassComponent implements OnInit {
 

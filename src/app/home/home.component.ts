@@ -1,23 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzFlexModule } from 'ng-zorro-antd/flex';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from '../components/card/card.component';
+import { Child, Course } from '../components/card/course';
 
-interface Course {
-  type:string
-  children?:Child[]
-}
-
-interface Child{
-  name:string,
-  url:string,
-  count:number,
-  comments:number,
-  isFree:boolean,
-  price?:number
-}
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NzCarouselModule],
+  imports: [NzCarouselModule,NzButtonModule,NzSegmentedModule,NzGridModule,FormsModule,NzCarouselModule,CardComponent,NzFlexModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
@@ -75,7 +69,8 @@ export class HomeComponent implements OnInit {
           url:'https://www.sikiedu.com/files/course/2024/10-31/10375866fccf393026.jpg',
           count:438,
           comments:2,
-          isFree:true
+          isFree:false,
+          price:240
         }
       ]
     },
@@ -129,10 +124,24 @@ export class HomeComponent implements OnInit {
       type:'其他',
     },
   ];
+  selectIndex = 0;
+  courseInfo:Child[] = [];
+  options = ['最新','最热','推荐'];
+  index:number = 1;
 
-  constructor() { }
+  constructor() {
+    this.courseInfo = this.courseList[0].children?this.courseList[0].children:[]
+  }
 
   ngOnInit() {
+  }
+
+  handleSelect(i:number,array?:Child[]) {
+    this.selectIndex = i
+    this.courseInfo = array?array:[]
+  }
+
+  getMessage(e:any) {
   }
 
 }

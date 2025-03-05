@@ -1,0 +1,22 @@
+<nz-card style="width: 300px;margin-top: 16px" [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
+  <nz-card-meta [nzTitle]="courseObj.name"></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img [src]="courseObj.url" alt="">
+</ng-template>
+<ng-template #actionSetting>
+  <div nz-row>
+    <div nz-col [nzSpan]="8">
+      <span nz-icon nzType="usergroup-delete" nzTheme="outline" style="margin-right: 5px;"></span>
+      <span>{{courseObj.count}}</span>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <span nz-icon nzType="comment" nzTheme="outline" style="margin-right: 5px;"></span>
+      <span>{{courseObj.comments}}</span>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <span [style.color]="courseObj.isFree?'#43bc60':'#ed3e3e'">{{courseObj.isFree?'免费':courseObj.price|count}}</span>
+    </div>
+  </div>
+</ng-template>
+

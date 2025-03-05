@@ -5,3 +5,27 @@
     </div>
   }
 </nz-carousel>
+
+<div class="home-content">
+  <h2 class="text-center">网校课程</h2>
+  <h4 class="text-center">精选网校课程，满足你的学习兴趣。</h4>
+
+  <div nz-row [nzGutter]="16" class="home-content-row">
+    <div nz-col [nzSpan]="20">
+      @for (item of courseList; track item;let idx = $index){
+        <button nz-button nzType="text" [class]="idx===selectIndex? 'course-type':''"
+          (click)="handleSelect(idx,item.children)">{{item.type}}</button>
+        }
+    </div>
+    <div nz-col [nzSpan]="4">
+      <nz-segmented [nzOptions]="options" [(ngModel)]="index"></nz-segmented>
+    </div>
+  </div>
+
+  <!-- card -->
+  <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
+    @for(course of courseInfo; track course){
+    <app-card [courseObj]="course" (messageEvent)="getMessage($event)" #child></app-card>
+    }
+  </div>
+</div>
