@@ -10,7 +10,7 @@
   </a>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu nzSelectable>
-      <li nz-menu-item *ngFor="let child of item.list" (click)="goToPage(child.path)">{{child.name}}</li>
+      <li nz-menu-item *ngFor="let child of item.list" (click)="goToPage(child)">{{child.name}}</li>
       <!-- routerLink方式跳转及传递参数 -->
       <!-- <li nz-menu-item *ngFor="let child of item.list" [routerLink]="[child.path]" [queryParams]="{id: 1}">{{child.name}}</li> -->
     </ul>

@@ -13,8 +13,8 @@ interface classInfo {
 })
 export class ClassComponent implements OnInit {
 
-  constructor(public router:ActivatedRoute) {
-    this.router.queryParams.subscribe((params: classInfo)=>{
+  constructor(public route:ActivatedRoute) {
+    this.route.queryParams.subscribe((params: classInfo)=>{
       console.log('queryParams----',params)
     })
   }

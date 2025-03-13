@@ -25,7 +25,7 @@
   <!-- card -->
   <div class="btn-wrapper" nz-flex [nzGap]="'middle'" nzWrap="wrap">
     @for(course of courseInfo; track course){
-    <app-card [courseObj]="course" (messageEvent)="getMessage($event)" #child></app-card>
+    <app-card [courseObj]="course" (messageEvent)="getMessage($event)" (click)="goToCourseDetail(course.id)" #child></app-card>
     }
   </div>
 </div>

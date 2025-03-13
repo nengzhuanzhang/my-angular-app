@@ -4,6 +4,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ClassComponent } from './home/class/class.component';
 import { PlanComponent } from './home/plan/plan.component';
 import { IntroductionComponent } from './home/class/introduction/introduction.component';
+import { DetailComponent } from './detail/detail.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,10 @@ export const routes: Routes = [
   {
     path:'class',
     component:ClassComponent
+  },
+  {
+    path:'detail',
+    component:DetailComponent
   },
   {
     path:'plan/:id',

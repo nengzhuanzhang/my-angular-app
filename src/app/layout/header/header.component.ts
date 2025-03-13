@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 import { Router } from '@angular/router';
+import { Child } from '../../components/card/course';
 
 
 interface MenuInfo {
@@ -92,8 +93,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToPage(path:string) {
-    this.router.navigate([path],{queryParams:{id:1}})
+  goToPage(child:MenuInfo) {
+    this.router.navigate([child.path],{queryParams:{id:1}})
   }
 
   logout() { }

@@ -1,0 +1,23 @@
+<div class="detail-wrap">
+  <!-- 课程基础信息 -->
+   <div class="course-info-base">
+    <div class="left-wrap">
+      <img [src]="courseInfo.url" alt="">
+    </div>
+    <div class="right-wrap">
+      <div class="course-detail-info">
+        <h4 class="course-title">{{courseInfo.name}}</h4>
+        <p class="text">{{courseInfo.completeTime? '制作完成于'+courseInfo.completeTime : ''}}</p>
+        <div class="price-wrap">
+          <span class="text">价格</span>
+          <span [className]="courseInfo.isFree?'free':'red'">{{courseInfo.isFree ? '免费' : '¥ ' + courseInfo.price}}</span>
+        </div>
+        <div class="expiration-time-wrap">
+          <span class="text">学习有效期</span>
+          <span>{{courseInfo.expirationTime ? courseInfo.expirationTime : '永久有效'}}</span>
+        </div>
+      </div>
+   </div>
+  <!-- 课程介绍 -->
+   <div class="course-info-detail"></div>
+</div>

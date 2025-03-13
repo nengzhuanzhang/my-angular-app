@@ -24,5 +24,4 @@ export class CardComponent implements OnInit {
   sendMessage(){
     this.messageEvent.emit('this is a output message form card component');
   }
-
 }

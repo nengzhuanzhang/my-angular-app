@@ -4,7 +4,10 @@ export interface Course {
 }
 
 export interface Child{
+  id:number | string,
   name:string,
+  completeTime?:string,
+  expirationTime?:string,
   url:string,
   count:number,
   comments:number,
